@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Inter:wght@300;400;600;700&display=swap');
+
+/* ----- APPS PAGE HEADER SECTION ----- */
+
+.apps-hero {
+    padding-top: 160px;
+    text-align: center;
+    color: white;
+    font-family: "Goldman";
+}
+
+.apps-main-title {
+    font-size: clamp(48px, 6vw, 84px);
+    margin-bottom: 10px;
+}
+
+.apps-subtitle {
+    font-size: 22px;
+    opacity: 0.9;
+    font-family: "Inter";
+    margin-bottom: 60px;
+}
+
+/* ----- APPS GRID ----- */
+
+.apps-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 34px;
+    padding: 0 28px 120px;
+}
+
+.app-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px) saturate(1.05);
+    padding: 28px;
+    border-radius: 22px;
+    color: white;
+    text-align: left;
+    font-family: "Inter";
+    transition: 250ms ease;
+}
+
+.app-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.app-card h2 {
+    font-size: 26px;
+    margin-bottom: 12px;
+}
+
+.app-card p {
+    font-size: 16px;
+    margin-bottom: 22px;
+    opacity: 0.85;
+}
+
+.app-card button {
+    padding: 12px 26px;
+    border-radius: 100px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.app-card button:disabled {
+    background: #444;
+    cursor: not-allowed;
+}
+
+@media (max-width: 520px) {
+    .apps-main-title {
+        font-size: 42px;
+    }
+}

@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+/* RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-y: auto;
+    background-color: black;
+    font-family: "Inter", sans-serif;
+}
+
+/* ---------- BACKGROUND VIDEO ---------- */
+.video-wrapper {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+    overflow: hidden;
+}
+
+#bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* dark overlay */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.18);
+    z-index: -1;
+}
+
+/* ---------- NAVIGATION ---------- */
+
+.logo img {
+    height: 65px;
+    padding-top: 0px;
+    padding-left: 8px;
+    top: 0px;
+    left: 5px;
+    z-index: 20;
+}
+
+.nav-container {
+    position: fixed;
+    top: 28px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 15;
+    pointer-events: none;
+}
+
+.center-nav {
+    pointer-events: auto;
+    display: flex;
+    gap: 22px;
+    padding: 8px 18px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    transition: all 320ms cubic-bezier(.22, 1, .36, 1); /* smooth bounce */
+}
+
+.center-nav:hover {
+    transform: scale(1.16);
+    padding: 12px 26px;
+    gap: 28px;
+    background: rgba(255, 255, 255, 0.20);
+}
+
+.nav-item {
+    color: #fff;
+    font-family: "Roboto Flex";
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    opacity: 0.9;
+    transition: 250ms ease;
+}
+
+.nav-item:hover {
+    transform: scale(1.3);
+    opacity: 1;
+}
+
+/* ---------- HERO SECTION ---------- */
+.hero {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.left-text {
+    position: absolute;
+    top: 58%;
+    left: 48px;
+    transform: translateY(-50%);
+    font-family: "Goldman";
+    color: white;
+    line-height: 0.9;
+}
+
+.left-text h1 {
+    font-size: clamp(32px, 5.5vw, 82px);
+    opacity: 0;
+    transform: translateY(16px);
+    animation: heroIn 900ms forwards cubic-bezier(.22, 1, .36, 1);
+}
+
+.left-text h1:nth-child(1) {
+    animation-delay: 140ms;
+}
+
+.left-text h1:nth-child(2) {
+    animation-delay: 360ms;
+}
+
+.left-text h1:nth-child(3) {
+    animation-delay: 620ms;
+}
+
+@keyframes heroIn {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- PROMOTION SECTION ---------- */
+.studymanager-promo {
+    width: 95%;
+    margin: auto;
+    padding: 90px 16px;
+    border-radius: 22px;
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px) saturate(1.05);
+}
+
+.studymanager-promo h2 {
+    font-size: 42px;
+    margin-bottom: 6px;
+}
+
+.studymanager-promo p {
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.studymanager-promo a button {
+    padding: 10px 22px;
+    border-radius: 100px;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}
+
+/* reveal animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top, #0A0F1F, #000000);
+    color: white;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 14px;
+    flex-wrap: wrap;
+}
+
+footer p {
+    padding: 4px 10px;
+}
+
+footer a {
+    color: #7b2ff7;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #f107a3;
+}
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+@media (max-width: 900px) {
+    .left-text {
+        top: 56%;
+        left: 28px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .logo img {
+        height: 48px;
+        top: 19px;
+        left: 12px;
+    }
+
+    .center-nav {
+        gap: 14px;
+        padding: 6px 14px;
+        top: 10px;
+        transform: scale(0.82);
+    }
+
+    .nav-item {
+        font-size: 14px;
+    }
+
+    .left-text {
+        top: 52%;
+        left: 16px;
+        line-height: 0.88;
+    }
+
+    .left-text h1 {
+        font-size: 50px;
+    }
+
+    .studymanager-promo {
+        padding: 70px 12px;
+    }
+
+    .studymanager-promo h2 {
+        font-size: 30px;
+    }
+
+    .studymanager-promo p {
+        font-size: 16px;
+    }
+
+    footer {
+        flex-direction: column;
+        font-size: 12px;
+        padding: 6px 0;
+    }
+}
