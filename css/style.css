@@ -72,26 +72,31 @@ body::before {
     gap: 22px;
     padding: 8px 18px;
     border-radius: 999px;
+
     background: rgba(255, 255, 255, 0.12);
     backdrop-filter: blur(12px);
-    transition: all 320ms cubic-bezier(.22, 1, .36, 1); /* smooth bounce */
+
+    /* 🔑 THIS IS THE BOUNCE */
+    transition: all 320ms cubic-bezier(.22, 1, .36, 1);
 }
 
 .center-nav:hover {
     transform: scale(1.16);
-    padding: 12px 26px;
-    gap: 28px;
-    background: rgba(255, 255, 255, 0.20);
+  padding: 12px 26px;
+  gap: 28px;
+  background: rgba(255, 255, 255, 0.20);
 }
 
 .nav-item {
-    color: #fff;
-    font-family: "Roboto Flex";
-    font-size: 16px;
-    font-weight: 600;
-    text-decoration: none;
-    opacity: 0.9;
-    transition: 250ms ease;
+    color: white;
+  font-family: "Roboto Flex";
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  opacity: 0.9;
+
+  transition: transform 250ms cubic-bezier(.22, 1, .36, 1),
+              opacity 250ms ease;
 }
 
 .nav-item:hover {

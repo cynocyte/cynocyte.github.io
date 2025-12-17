@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Inter:wght@300;400;600;700&display=swap');
+
+/* ========================= */
+/* RESET                     */
+/* ========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  font-family: "Inter", sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* ========================= */
+/* BACKGROUND VIDEO          */
+/* ========================= */
+.video-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  overflow: hidden;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ========================= */
+/* DARK OVERLAY              */
+/* ========================= */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.32);
+  z-index: -4;
+}
+
+/* ========================= */
+/* HEADER                    */
+/* ========================= */
+.header {
+  width: 100%;
+  padding: 18px 24px 10px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: white;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.logo span {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+/* ========================= */
+/* PAGE INTRO                */
+/* ========================= */
+.page-intro {
+  max-width: 960px;
+  padding: 70px 24px 40px;
+}
+
+.page-intro h1 {
+  font-family: "Goldman";
+  font-size: clamp(36px, 5vw, 64px);
+  margin-bottom: 12px;
+}
+
+.page-intro p {
+  font-size: 18px;
+  opacity: 0.85;
+  line-height: 1.6;
+  max-width: 720px;
+}
+
+/* ========================= */
+/* FORM SECTION              */
+/* ========================= */
+.form-section {
+  width: 100%;
+  padding: 0 16px 100px;
+}
+
+.form-container {
+  max-width: 1100px;
+  margin: auto;
+  border-radius: 24px;
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+/* IFRAME FIXES */
+.form-container iframe {
+  display: block;
+  width: 100%;
+  min-height: 1900px;
+  border: none;
+}
+
+/* ========================= */
+/* BACK BUTTON               */
+/* ========================= */
+.back-btn {
+  position: fixed;
+  left: 22px;
+  bottom: 22px;
+  z-index: 20;
+
+  padding: 12px 26px;
+  border-radius: 999px;
+
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 200ms ease, background 200ms ease;
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: scale(1.06);
+}
+
+/* ========================= */
+/* FOOTER                    */
+/* ========================= */
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  padding: 12px 10px;
+  font-size: 13px;
+
+  background: linear-gradient(to top, #0A0F1F, #000);
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: #7b2ff7;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #f107a3;
+}
+
+/* ========================= */
+/* RESPONSIVE FIXES          */
+/* ========================= */
+@media (max-width: 900px) {
+
+  .page-intro {
+    padding-top: 60px;
+  }
+
+  .page-intro p {
+    font-size: 16px;
+  }
+
+  .form-container iframe {
+    min-height: 2300px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .logo img {
+    height: 44px;
+  }
+
+  .logo span {
+    font-size: 18px;
+  }
+
+  .page-intro {
+    padding: 50px 18px 30px;
+  }
+
+  .form-section {
+    padding-bottom: 120px;
+  }
+
+  .back-btn {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 18px;
+  }
+
+  .back-btn:hover {
+    transform: translateX(-50%) scale(1.05);
+  }
+}
